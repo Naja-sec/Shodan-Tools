@@ -1,0 +1,6 @@
+curl -s "https://internetdb.shodan.io/$IP"
+curl -s "https://api.hackertarget.com/hostsearch/?q=$IP"
+curl -s "https://otx.alienvault.com/api/v1/indicators/IPv4/$IP/passive"
+curl -s "https://www.virustotal.com/api/v3/ip_addresses/$IP" -H "x-apikey: APIKEY_TAVAKOLI"
+curl -s "https://dns.bufferover.run/dns?q=$IP" | jq -r '.FDNS_A[]' 2>/dev/null
+curl -s "https://ridder.co/api/domains/from-ip/$IP"

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Shodan Tools</title>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-text">SHODAN</span>
+                <span class="logo-subtitle">TOOLS</span>
+            </div>
+            <div class="stars"></div>
+        </header>
+
+        <!-- Main Menu View -->
+        <div id="mainMenu" class="view active">
+            <nav class="main-menu">
+                <div class="menu-item" data-view="ipExtractor">
+                    <div class="menu-icon">🌐</div>
+                    <div class="menu-content">
+                        <div class="menu-title"> Extractor (strong tags)</div>
+                        <div class="menu-desc">Extract strong tags</div>
+                    </div>
+                    <div class="menu-arrow">→</div>
+                </div>
+                <div class="menu-item" data-view="ipIntel">
+                    <div class="menu-icon">🕵️</div>
+                    <div class="menu-content">
+                        <div class="menu-title">Who’s Behind This IP?</div>
+                        <div class="menu-desc">Open intel tabs for a single IP</div>
+                    </div>
+                    <div class="menu-arrow">→</div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- IP Extractor View -->
+        <div id="ipExtractor" class="view">
+            <div class="view-header">
+                <button class="back-btn">← Back</button>
+                <h2 class="view-title">Extractor</h2>
+            </div>
+            <div class="view-content">
+                <button id="extractButton" class="action-btn">
+                    <span class="btn-icon">⚡</span>
+                    <span>Extract strong tags</span>
+                </button>
+                <div class="result-container">
+                    <textarea id="ipList" rows="10" placeholder="strong tags will be displayed here..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- IP Intel Launcher View -->
+        <div id="ipIntel" class="view">
+            <div class="view-header">
+                <button class="back-btn">← Back</button>
+                <h2 class="view-title">Who’s Behind This IP?</h2>
+            </div>
+            <div class="view-content">
+                <label for="singleIpInput">Enter a single IP</label>
+                <input id="singleIpInput" type="text" placeholder="e.g. 1.1.1.1">
+                <button id="intelOpenButton" class="action-btn">
+                    <span class="btn-icon">🧭</span>
+                    <span>Open all intel tabs</span>
+                </button>
+                <p class="helper-text">Opens Shodan, Censys, ZoomEye, FOFA, CriminalIP, Onyphe, GreyNoise in separate tabs.</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/popup.js"></script>
+</body>
+</html>

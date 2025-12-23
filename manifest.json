@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Shodan Tools",
+  "description": "This is a Chrome extension for Shodan and recon.",
+  "version": "1.0",
+  "author": "Naja-sec",
+  
+  "icons": {
+    "16": "assets/icon.png",
+    "48": "assets/icon.png",
+    "128": "assets/icon.png"
+  },
+  "action": {
+    "default_icon": "assets/icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Shodan Tools"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/background.js"]
+    }
+  ],
+
+  "permissions": [
+    "storage",
+    "tabs",
+    "scripting"
+  ],
+
+  "host_permissions": [
+    "<all_urls>",
+    "file:///*"
+  ],
+
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
